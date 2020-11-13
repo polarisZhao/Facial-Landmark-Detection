@@ -50,7 +50,7 @@ Your `data` directory should look like this:
 2 directories, 8 files
 ````
 
-###　3. Training
+### 3. Training
 
 ````bash
 python train.py --cfg <CONFIG-FILE>
@@ -62,9 +62,10 @@ python3 train.py --cfg experiments/face_alignment_wflw_hrnet_w18.yaml
 
 ##### WFLW
 
-|       NME       | *test* | *pose* | *illumination* | *occlution* | *blur* | *makeup* | *expression* |
-| :-------------: | :----: | :----: | :------------: | :---------: | :----: | :------: | :----------: |
-| shufflenet_plus |  4.79  |  8.56  |      4.73      |    5.80     |  5.47  |   4.77   |     5.15     |
+|       NME       | model_size | *test* | *pose* | *illumination* | *occlution* | *blur* | *makeup* | *expression* |
+| :-------------: | ---------- | :----: | :----: | :------------: | :---------: | :----: | :------: | :----------: |
+| shufflenet_plus | 13.8M      |  4.79  |  8.56  |      4.73      |    5.80     |  5.47  |   4.77   |     5.15     |
+|      HRNet      | 39.2M      |  4.60  |  7.86  |      4.57      |    5.42     |  5.36  |   4.26   |     4.78     |
 
 ### 5. project structure
 
