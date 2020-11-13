@@ -1,0 +1,52 @@
+GPUS: [0,]
+WORKERS: 8
+PRINT_FREQ: 50
+AUTO_RESUME: false
+PIN_MEMORY: true
+LOG_DIR: 'log'
+OUTPUT_DIR: 'output'
+
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false  
+  ENABLED: true
+DATASET:
+  DATASET: WFLW
+  ROOT: './data/wflw/images/'
+  TRAINSET: './data/wflw/face_landmarks_wflw_train.csv'
+  TESTSET: './data/wflw/face_landmarks_wflw_test.csv'
+  FLIP: true
+  SCALE_FACTOR: 0.25
+  ROT_FACTOR: 30
+MODEL:
+  NAME: 'shufflenet'
+  NUM_JOINTS: 98
+  INIT_WEIGHTS: true
+  PRETRAINED: ''
+  TARGET_TYPE: 'Gaussian'
+  SIGMA: 1.5
+  IMAGE_SIZE:
+    - 256
+    - 256
+  HEATMAP_SIZE:
+    - 64
+    - 64
+  EXTRA:
+    FINAL_CONV_KERNEL: 1
+TRAIN:
+  BATCH_SIZE_PER_GPU: 16
+  SHUFFLE: true
+  BEGIN_EPOCH: 0
+  END_EPOCH: 80
+  RESUME: false
+  RESUME_EPOCH : 45
+  OPTIMIZER: 'adam'
+  LR_FACTOR: 0.1
+  LR: 0.0001
+  WD: 0.0
+  LR_STEP: [30, 50, 70]
+  MOMENTUM: 0.0
+  NESTEROV: false
+  CHECKPOINT: ''
+TEST:
+  BATCH_SIZE_PER_GPU: 16
