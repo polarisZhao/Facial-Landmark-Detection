@@ -2,24 +2,24 @@
 
 ### 1.  Quick start
 
-（1）Install dependencies
+（1）Clone the project
 
 ````bash
-pip3 install -r requirements.txt
+git clone https://github.com/HRNet/HRNet-Facial-Landmark-Detection.git
 ````
 
-（2）Clone the project
+（2）Install dependencies
 
 ````bash 
-git clone https://github.com/HRNet/HRNet-Facial-Landmark-Detection.git
+pip3 install -r requirements.txt
 ````
 
 （3） download pre-trained model and test
 
 ~~~python
-python3 test.py --cfg <CONFIG-FILE> --model-file <MODEL WEIGHT> 
+python3 camera.py--cfg <CONFIG-FILE> --model-file <MODEL WEIGHT> 
 # example:
-python3 test.py --cfg experiments/face_landmark_detection_wflw_shufflenet_large.yaml  --model-file pretrained/shufflenet_plus.pth
+python3 camera.py  --cfg experiments/face_landmark_detection_wflw_shufflenet_large.yaml  --model-file pretrained/shufflenet_plus.pth
 ~~~
 
 ### 2. Datasets
